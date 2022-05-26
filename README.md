@@ -6,6 +6,13 @@ This package is a flutter version of `discord-logger-js`. Refer: https://github.
 | --------------- | ------- | ------- |
 | **Requirement** | min 16  | min 9.0 |
 
+
+#### Demo:
+
+![demo](
+https://github.com/johnmelodyme/flutter_discord_logger/blob/main/demo.gif?raw=true)
+
+
 ### How to use?
 
 1. Installation
