@@ -10,7 +10,7 @@ class Discord {
   String? webhookUrl;
 
   @required
-  Discord({this.appName, this.webhookUrl}) {
+  Discord({@required this.appName, @required this.webhookUrl}) {
     Discord._();
   }
 
@@ -18,7 +18,7 @@ class Discord {
   /// [message] custom messages
   /// [timer] delay , default set to 1 second
   @required
-  Future<void> send({String? message, int? timer = 1}) async {
+  Future<void> send({@required String? message, int? timer = 1}) async {
     Uri url = Uri.parse(webhookUrl!);
 
     Future.delayed(Duration(seconds: timer!), () async {

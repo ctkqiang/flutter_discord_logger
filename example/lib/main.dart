@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_discord_logger/flutter_discord_logger.dart';
 
 void main() {
   runApp(const MyApp());
@@ -73,10 +74,35 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Form(
             child: Column(
               children: [
-                TextFormField(),
-                TextFormField(),
+                TextFormField(
+                  controller: webhook,
+                  decoration:
+                      const InputDecoration(hintText: 'Discord Webhook url'),
+                ),
+                TextFormField(
+                  controller: message,
+                  decoration: const InputDecoration(hintText: 'Message'),
+                ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    /// Init Discord
+                    late final Discord discord = Discord(
+                      /// Name of your webhook
+                      appName: 'app',
+
+                      /// Your Webhook url
+                      webhookUrl: webhook.text.toString(),
+                    );
+
+                    discord.send(
+                      /// Your message
+                      message: message.text.toString(),
+
+                      timer: 2,
+
+                      /// delay, default set to 1
+                    );
+                  },
                   child: const Text('Send'),
                 ),
               ],
