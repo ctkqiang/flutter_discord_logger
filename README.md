@@ -1,39 +1,54 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+### flutter_discord_logger
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+This package is a flutter version of `discord-logger-js`. Refer: https://github.com/johnmelodyme/discord-logger-js
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
+|                 | Android | IOS     |
+| --------------- | ------- | ------- |
+| **Requirement** | min 16  | min 9.0 |
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+### How to use?
 
-## Features
+1. Installation
+   Add `flutter_discord_logger` to `pubspec.yaml`, and hit command `flutter pub get`.
+   or
+   run `flutter pub add flutter_discord_logger`
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+   ```yaml
+   dependencies:
+     flutter_discord_logger: any
+   ```
 
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
-
-## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+2. Implementation
+   Before implementing, make sure you uderstand the `parameters`.
 
 ```dart
-const like = 'sample';
+    import 'package:flutter_discord_logger/flutter_discord_logger.dart';
 ```
 
-## Additional information
+Example of calling the widget:
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+```dart
+   /// Init Discord
+    late final Discord discord = Discord(
+    /// Name of your webhook
+        appName: 'app',
+
+        /// Your Webhook url
+        webhookUrl: webhook.text.toString(),
+    );
+
+    discord.send(
+        /// Your message
+        message: message.text.toString(),
+        /// delay, default set to 1
+        timer: 2, 
+    );
+```
+
+### Contribution:
+
+I Would ❤️ to see any contributions. If you do liked my work, show some ❤️ by ⭐ repo.
+
+Also you can appreciate me by buy me a coffee:
+<br />
+<a href="https://www.buymeacoffee.com/johnmelodymel" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
