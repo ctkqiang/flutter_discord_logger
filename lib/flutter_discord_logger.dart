@@ -24,10 +24,9 @@ class Discord {
     Future.delayed(Duration(seconds: timer!), () async {
       await http.post(
         url,
-        headers: {'Content-Type': 'application/json'},
         body: {
           'username': appName,
-          'content': url,
+          'content': message,
         },
       );
     });
